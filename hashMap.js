@@ -16,22 +16,20 @@ export class hashMap {
         return Math.abs(hashCode) % this.capacity;
     }
 
-    // set(key, value) { 
-    //     if(!this.bucket) return null; 
-    //     let index = this.getHashCode(key); 
-    //     let bucket = this.bucket; 
+    set(key, value) { 
+        if(!this.bucket) return null; 
+        let index = this.getHashCode(key); 
+        let bucket = this.bucket; 
         
-    //     for(let i = 0; i < bucket.length; i++){
-    //             if(bucket[i][0] === key) { 
-    //                 bucket[i][1] = value;
-    //                 return bucket[i][1];
-    //             }else {
-    //                 bucket.push({key , value});
-    //                 this.size++
-    //             }
-    //             if(this.size >= 12) return console.log("Time to update size");
-    //             return bucket; 
-    //     }
-    // }
+        for(let i = 0; i < bucket.length; i++){
+                if(bucket[i][0] === key) { 
+                    bucket[i][1] = value;
+                    return;
+             ``}
+            }
+        bucket.push([key , value]);
+        this.size++
+
+    }
 }
 
