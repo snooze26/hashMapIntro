@@ -1,0 +1,173 @@
+Creating a hashmap 
+
+Create a hashmap class with constructors(loadFactor = 0.75, capacity = 16, size, bucket)
+bucket = new Array(capacity).fill(null).map(() => [])
+
+create a function that takes the key and produces a hash code with it 
+****(if help is needed go look at the odin on the hashmap lesson. make sure that you follow the version of code that has the prime number)****
+
+hash(key) {
+	create hashCode temp variable assign to 0 
+	create a const primeNumber variable assign to 13
+	give each character in key a value  
+		(i = 0; i < key.length; i++ 
+		hashCode = product of (primeNumber/hashCode) + key.charCodeAt(i);)
+	modulo the hashCode with the bucket size 
+		hashCode = hashCode % 16 
+	return hashCode 
+}
+
+create a function when the size of our map exceeds 12  
+resize() { 
+	//resize capacity doubling the size 
+	newCapacity = this.capacity * 2;
+	
+	// create a new Array that takes in the new size for capacity 
+	let newBuckets = new Array(this.capacity).fill(null).map(() => [])
+
+	// reshash all existing key-value pairs in the new buckets 
+	for each Bucket in currentBuckets:
+		for each keyValuePair IN bucket
+		key = keyValuePair[0]
+		value = keyValuePair[1]
+
+	//compute the new index using the updated capacity 
+	const newIndex = getHashCode(key, newCapacity)
+
+	//add key value pair to the new bucket 
+	newBuckets[newIndex].push([key , value])
+
+	//update the hash table properties
+	this.bucket = newBucket 
+	this.capacity = newCapacity 
+ }
+			
+		
+
+Create a function to set a value at a specific key if the key already has a value then update that value with the new value
+
+set(key, value) {
+	create a array called bucket and assign it to the HM bucket
+	create a index variable that is assigned to hash(key)
+	i = 0; i < bucket.length; i++
+		if (bucket[i][0] == key) if bucket key equals bucket key  
+			bucket[i][1] = value; 
+			return 
+	if key doesn't exist in bucket add it to the bucket list 
+	increment size
+	reize the hash table if the lf is exceeded 
+	if size / capacting is greater than loadFactor 
+		run resize for the map 
+	
+	
+
+get(key) {
+	check if key is less than or equal to zero, if so return null
+	create a index variable that is assigned to hash(key)
+	create a array called bucket and assign it to the HM bucket
+	i = 0; i < bucket.length; i++
+		if bucket[i][0] == key THEN
+			return bucket[i][1]
+	return null
+}
+
+
+
+has(key) { 
+	check if key is less than or equal to zero, if so return null
+	create a index variable that is assigned to hash(key)
+	create a array called bucket and assign it to the HM bucket
+	i = 0; i < bucket.length; i++
+		if bucket[index][0] == key THEN
+			return true 
+	return false
+}
+
+
+
+remove(key) { 
+	check if key is less than or equal to zero, if so return null
+	create a index variable that is assigned to hash(key)
+	create a array called bucket and assign it to the HM bucket
+	i = 0; i < bucket.length; i++
+		if bucket[i][0] == key THEN
+			bucket[i] = null 
+			decrement size 
+			return true 
+	reize the hash table if the lf is exceeded 
+	if size / capacting is greater than loadFactor 
+		run resize for the map 
+
+	return false
+	
+}
+
+
+length(){ 
+	Check if the list is empty IF it is then return null 
+	Create a variable called Count and assign 0 to it
+	create a array called bucket and assign it to the HM bucket
+	iterate through the bucket list
+		if bucket's key is true then 
+			increment count 
+	return count
+}
+
+
+clear(){ 
+	Check if the list is empty IF it is then return null 
+	Create a variable called Count and assign 0 to it 
+	create a array called bucket and assign it to the HM bucket 
+	iterate through the bucket list for when count is less than or equal to list size 
+		if bucket's key is true then 
+			make the bucket element null 
+			decrement the size of the map  
+		resize map 
+		return map;
+}
+
+
+keys() { 
+	Check if the list is empty IF it is then return null 
+	Create a variable called Count and assign 0 to it 
+	Create an empty array called keys
+	create a array called bucket and assign it to the HM bucket 			while bucket key is true 
+		add the key to the keys array 
+	return keys array 
+}
+
+
+values() { 
+	Check if the list is empty IF it is then return null 
+	Create an empty array called values
+	create a array called bucket and assign it to the HM bucket 			while bucket value is true 
+		add the value to the values array 
+	return values array 
+
+
+entries() { 
+	check if the list is empty If it is then return null 
+	create a array called bucket and assign it to the hm bucket 
+	create a array called keyValues set it as an empty array 
+	while the buckets' key and values are true 
+		add them both to the keyValues array as a pair 
+	return the keyValues array 
+}
+-
+		
+
+
+
+
+
+	
+		
+		
+
+
+
+
+	
+	
+	
+
