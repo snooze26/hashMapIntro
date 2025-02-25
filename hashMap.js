@@ -61,8 +61,9 @@ export class hashMap {
         
         for(let i = 0; i < bucket.length; i++) {
             const newIndex = this.getHashCode(bucket[i][0]);
-            if(bucket[i][0] === key) { 
-                return bucket[i][1];
+            const newValue = bucket[i][1];
+            if(newIndex === key) { 
+                return newValue;
              }
        }
        return null; 
@@ -89,8 +90,10 @@ export class hashMap {
 
         for(let i = 0; i < bucket.length; i++) {
             const newIndex = this.getHashCode(bucket[i][0]);
-            if(bucket[i][0] == key) {
-                bucket[i] = ""
+            if(newIndex == index) {
+                console.log(bucket[i][0])
+                bucket[i] = []
+                console.log(bucket[i])
                 this.size --
                 return true
             }else{
@@ -104,7 +107,17 @@ export class hashMap {
     }
 
     clear() {
-        
+        if(!this.bucket) return null; 
+        for(let i = 0; i < this.bucket.length; i++) {
+            if(this.bucket[i] = []) {
+                return true;
+            }else{
+                this.bucket[i] = [];
+                this.size --  
+            }
+        }
+
+    
     }
 }
 
