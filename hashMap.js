@@ -4,6 +4,7 @@ export class hashMap {
         this.capacity = capacity; 
         this.size = 0;
         this.bucket = new Array(capacity).fill(null).map(() => [])
+        this.changeNum = this.capacity * this.loadFactor;
 
     }
     
@@ -14,22 +15,63 @@ export class hashMap {
             hashCode = hashCode * primeNumber + key.charCodeAt(i);
         }
         return Math.abs(hashCode) % this.capacity;
+        console.log(this.changeNum);
+    }
+
+    resize() { 
+        let newCapacity = this.capacity * 2;
+        let newBucket = new Array (newCapacity).fill(null).map(() => []);
+    
+        
+        for(let i = 0; i < this.bucket.length; i++) { 
+                for(const [key, value] of this.bucket[i]) { 
+                    const newIndex = this.getHashCode(key);
+                    newBucket[newIndex].push([key, value])
+            }
+        }
+        this.capacity = newCapacity;
+        this.bucket = newBucket;
     }
 
     set(key, value) { 
+
         if(!this.bucket) return null; 
         let index = this.getHashCode(key); 
-        let bucket = this.bucket; 
+        let bucket = this.bucket[index]; 
         
         for(let i = 0; i < bucket.length; i++){
                 if(bucket[i][0] === key) { 
                     bucket[i][1] = value;
                     return;
-             ``}
-            }
+             }
+        }
+
         bucket.push([key , value]);
         this.size++
-
+        
+        if(this.size >= this.changeNum){
+            this.resize(bucket)
+            this.changeNum = this.capacity * this.loadFactor
+        }
     }
+
+    get(key) { 
+        if(!this.bucket) return null;
+        let  index = this.getHashCode(key);
+
+        for(let i = 0; i < this.bucket.length; i++) { 
+            for(const [key, value] of this.bucket[i]) {
+                const newIndex = this.getHashCode(key); 
+                console.log("OLD" , index);
+                console.log("NEW" , newIndex);
+               if(index newIndex){
+                    return false
+               }
+        }
+    }
+        
+    }
+
 }
+
 

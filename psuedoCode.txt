@@ -19,34 +19,21 @@ hash(key) {
 
 create a function when the size of our map exceeds 12  
 resize() { 
-	//resize capacity doubling the size 
-	newCapacity = this.capacity * 2;
-	
-	// create a new Array that takes in the new size for capacity 
-	let newBuckets = new Array(this.capacity).fill(null).map(() => [])
-
-	// reshash all existing key-value pairs in the new buckets 
-	for each Bucket in currentBuckets:
-		for each keyValuePair IN bucket
-		key = keyValuePair[0]
-		value = keyValuePair[1]
-
-	//compute the new index using the updated capacity 
-	const newIndex = getHashCode(key, newCapacity)
-
-	//add key value pair to the new bucket 
-	newBuckets[newIndex].push([key , value])
-
-	//update the hash table properties
-	this.bucket = newBucket 
-	this.capacity = newCapacity 
+	create the new capacity size 
+	create the new bucket 
+	for i = 0; i less than old bucket's length; incremenet i 
+		for const key, value inside of old bucket[i]
+			newIndex is assigned the key hashed 
+			newBucket's newindex pushes the key and value 
+	capacity becomes newapacity 
+	bucket becomes newBucket
  }
 			
 		
 
 Create a function to set a value at a specific key if the key already has a value then update that value with the new value
 
-set(key, value) {
+set(key, value){
 	create a array called bucket and assign it to the HM bucket
 	create a index variable that is assigned to hash(key)
 	i = 0; i < bucket.length; i++
@@ -59,12 +46,12 @@ set(key, value) {
 	if size / capacting is greater than loadFactor 
 		run resize for the map 
 	
-	
+
+create a get function that takes an arguement of key and returns 
+the value if it assigned to the located key if not found then return null 
 
 get(key) {
-	check if key is less than or equal to zero, if so return null
 	create a index variable that is assigned to hash(key)
-	create a array called bucket and assign it to the HM bucket
 	i = 0; i < bucket.length; i++
 		if bucket[i][0] == key THEN
 			return bucket[i][1]
