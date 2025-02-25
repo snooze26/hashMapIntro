@@ -91,9 +91,7 @@ export class hashMap {
         for(let i = 0; i < bucket.length; i++) {
             const newIndex = this.getHashCode(bucket[i][0]);
             if(newIndex == index) {
-                console.log(bucket[i][0])
                 bucket[i] = []
-                console.log(bucket[i])
                 this.size --
                 return true
             }else{
@@ -109,15 +107,13 @@ export class hashMap {
     clear() {
         if(!this.bucket) return null; 
         for(let i = 0; i < this.bucket.length; i++) {
-            if(this.bucket[i] = []) {
-                return true;
-            }else{
+            if(!this.bucket[i] == []) {
                 this.bucket[i] = [];
-                this.size --  
+                this.size = 0;
             }
-        }
-
     
+        }
+        return this.bucket;
     }
 }
 
