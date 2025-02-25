@@ -82,7 +82,7 @@ remove(key) {
 	loop through the bucket 
 		create a newIndex variable that is assigned to the index value (bucket[i][0])
 		if newIndex === key 
-			make the node empty 
+			make the array empty  
 		else 
 			return false 
 }
@@ -95,20 +95,16 @@ length(){
 
 clear(){ 
 	Check if the list is empty IF it is then return null 
-	Create a variable called Count and assign 0 to it 
-	create a array called bucket and assign it to the HM bucket 
-	iterate through the bucket list for when count is less than or equal to list size 
-		if bucket's key is true then 
-			make the bucket element null 
+	iterate through the bucket list for when i is less than or equal to list size 
+		if the bucket inside the bucket list is not an empty array  
+			make the bucket element an empty array  
 			decrement the size of the map  
-		resize map 
-		return map;
+	return bucket;
 }
 
 
 keys() { 
 	Check if the list is empty IF it is then return null 
-	Create a variable called Count and assign 0 to it 
 	Create an empty array called keys
 	create a array called bucket and assign it to the HM bucket 			while bucket key is true 
 		add the key to the keys array 
