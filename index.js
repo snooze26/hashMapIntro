@@ -5,7 +5,7 @@ import { hashMap } from "./hashMap.js";
 const test = new hashMap();
 
 test.set('Billys Dad', 'Undead male')
-test.set('Grim', 'Human dumbass')
+test.set('Billy', 'Human dumbass')
 test.set('Irwin', 'Human boy')
 test.set('Mandy', 'Human girl')
 // test.set('frog', 'green')
@@ -19,7 +19,7 @@ test.set('Mandy', 'Human girl')
 
 // console.log(test);
 
-console.log(test.keys())
+console.log(test.values())
 
 // console.log(test.length());
 
