@@ -76,19 +76,15 @@ has(key) {
 }
 
 remove(key) { 
-	check if key is less than or equal to zero, if so return null
+	check if bucket is null if it is then return null
 	create a index variable that is assigned to hash(key)
-	create a array called bucket and assign it to the HM bucket
-	i = 0; i < bucket.length; i++
-		if bucket[i][0] == key THEN
-			bucket[i] = null 
-			decrement size 
-			return true 
-	reize the hash table if the lf is exceeded 
-	if size / capacting is greater than loadFactor 
-		run resize for the map 
-
-	return false
+	create a bucket array that is assigned to the bucket index 
+	loop through the bucket 
+		create a newIndex variable that is assigned to the index value (bucket[i][0])
+		if newIndex === key 
+			make the node empty 
+		else 
+			return false 
 	
 }
 

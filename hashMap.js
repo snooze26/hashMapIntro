@@ -15,7 +15,6 @@ export class hashMap {
             hashCode = hashCode * primeNumber + key.charCodeAt(i);
         }
         return Math.abs(hashCode) % this.capacity;
-        console.log(this.changeNum);
     }
 
     resize() { 
@@ -40,12 +39,13 @@ export class hashMap {
         let bucket = this.bucket[index]; 
         
         for(let i = 0; i < bucket.length; i++){
+                console.log(bucket[i[0]])
                 if(bucket[i][0] === key) { 
                     bucket[i][1] = value;
                     return;
              }
         }
-
+        console.log(index, " INDEX")
         bucket.push([key , value]);
         this.size++
         
@@ -81,6 +81,23 @@ export class hashMap {
             }
         }
         return false; 
+    }
+    
+    remove(key) { 
+        if(!this.bucket) return null;
+        let index = this.getHashCode(key);
+        let bucket = this.bucket[index];
+
+        for(let i = 0; i < bucket.length; i++) {
+            const newIndex = this.getHashCode(bucket[i][0]);
+            if(bucket[i][0] == key) {
+                bucket[i] = ""
+                this.size --
+                return true
+            }else{
+                return false
+            }
+        }
     }
 }
 
