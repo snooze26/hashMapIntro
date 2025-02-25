@@ -51,10 +51,13 @@ create a get function that takes an arguement of key and returns
 the value if it assigned to the located key if not found then return null 
 
 get(key) {
+	check if bucket is null if it is then return null
 	create a index variable that is assigned to hash(key)
-	i = 0; i < bucket.length; i++
-		if bucket[i][0] == key THEN
-			return bucket[i][1]
+	create a bucket array that is assigned to the bucket index 
+	loop through the bucket 
+		create a newIndex variable that is assigned to the index value (bucket[i][0])
+		if newIndex === key 
+			return the value of the value in bucket (bucket[i][1])
 	return null
 }
 
