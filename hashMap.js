@@ -45,7 +45,6 @@ export class hashMap {
                     return;
              }
         }
-        console.log(index, " INDEX")
         bucket.push([key , value]);
         this.size++
         
@@ -98,6 +97,14 @@ export class hashMap {
                 return false
             }
         }
+    }
+
+    length() {
+        return this.size;
+    }
+
+    clear() {
+        
     }
 }
 

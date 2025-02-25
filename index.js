@@ -18,6 +18,6 @@ test.set('Mandy', 'Human girl')
 // test.set('tiger', 'blackkk')
 
 
-
+console.log(test.length());
 
 

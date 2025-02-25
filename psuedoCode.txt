@@ -85,18 +85,11 @@ remove(key) {
 			make the node empty 
 		else 
 			return false 
-	
 }
 
 
 length(){ 
-	Check if the list is empty IF it is then return null 
-	Create a variable called Count and assign 0 to it
-	create a array called bucket and assign it to the HM bucket
-	iterate through the bucket list
-		if bucket's key is true then 
-			increment count 
-	return count
+	return size 
 }
 
 
