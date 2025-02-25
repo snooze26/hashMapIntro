@@ -132,6 +132,15 @@ export class hashMap {
             }
         }
     }
+
+    entries() { 
+        if(!this.bucket) return null;
+        for(let i = 0; i < this.bucket.length; i++) {
+            for(const [key, value] of this.bucket[i]) {
+                console.log(`Key: ${key} | Value: ${value}`)
+            }
+        }
+    }
 }
 
 

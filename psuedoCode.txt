@@ -75,6 +75,7 @@ has(key) {
 	return false 
 }
 
+create a function that removes the key and value in the selected bucket
 remove(key) { 
 	check if bucket is null if it is then return null
 	create a index variable that is assigned to hash(key)
@@ -87,12 +88,12 @@ remove(key) {
 			return false 
 }
 
-
+create a function that returns the number of stored keys in the hash map  
 length(){ 
 	return size 
 }
 
-
+create a function that clears all of the buckets inside of the hashmap 
 clear(){ 
 	Check if the list is empty IF it is then return null 
 	iterate through the bucket list for when i is less than or equal to list size 
@@ -102,7 +103,7 @@ clear(){
 	return bucket;
 }
 
-
+create a function that logs all the keys inside of the hashmap 
 keys() { 
 	Check if the list is empty IF it is then return null 
 	iterate through the bucket list for when i is less than or equal to list size
@@ -111,22 +112,22 @@ keys() {
 			log the key   
 }
 
-
+create a function that logs all the values inside of the hashmap 
 values() { 
 	Check if the list is empty IF it is then return null 
 	iterate through the bucket list for when i is less than or equal to list size
 		inside a for loop create two new variables in an array called key , value 
 		set the for loop condition to for key and value of this bucket's index 
 			log the value 
+}
 
-
+create a function returns an array that contains each key, value pair
 entries() { 
-	check if the list is empty If it is then return null 
-	create a array called bucket and assign it to the hm bucket 
-	create a array called keyValues set it as an empty array 
-	while the buckets' key and values are true 
-		add them both to the keyValues array as a pair 
-	return the keyValues array 
+	Check if the list is empty IF it is then return null 
+	iterate through the bucket list for when i is less than or equal to list size
+		inside a for loop create two new variables in an array called key , value 
+		set the for loop condition to for key and value of this bucket's index 
+			log the key and value 
 }
 -
 		

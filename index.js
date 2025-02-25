@@ -19,7 +19,7 @@ test.set('Mandy', 'Human girl')
 
 // console.log(test);
 
-console.log(test.values())
+console.log(test.entries())
 
 // console.log(test.length());
 
