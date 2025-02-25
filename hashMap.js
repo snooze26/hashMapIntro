@@ -20,21 +20,21 @@ export class hashMap {
     resize() { 
         let newCapacity = this.capacity * 2;
         let newBucket = new Array (newCapacity).fill(null).map(() => []);
-    
-        
+
         for(let i = 0; i < this.bucket.length; i++) { 
                 for(const [key, value] of this.bucket[i]) { 
                     const newIndex = this.getHashCode(key);
                     newBucket[newIndex].push([key, value])
             }
         }
+
         this.capacity = newCapacity;
         this.bucket = newBucket;
     }
 
     set(key, value) { 
-
         if(!this.bucket) return null; 
+
         let index = this.getHashCode(key); 
         let bucket = this.bucket[index]; 
         
@@ -44,6 +44,7 @@ export class hashMap {
                     return;
              }
         }
+
         bucket.push([key , value]);
         this.size++
         
@@ -55,6 +56,7 @@ export class hashMap {
 
     get(key) { 
         if(!this.bucket) return null; 
+
         let index = this.getHashCode(key); 
         let bucket = this.bucket[index];
         
@@ -70,6 +72,7 @@ export class hashMap {
 
     has(key) {
         if(!this.bucket) return null;
+
         let index = this.getHashCode(key);
         let bucket = this.bucket[index]; 
         
@@ -84,6 +87,7 @@ export class hashMap {
     
     remove(key) { 
         if(!this.bucket) return null;
+
         let index = this.getHashCode(key);
         let bucket = this.bucket[index];
 
@@ -105,6 +109,7 @@ export class hashMap {
 
     clear() {
         if(!this.bucket) return null; 
+
         for(let i = 0; i < this.bucket.length; i++) {
             if(!this.bucket[i] == []) {
                 this.bucket[i] = [];
@@ -117,6 +122,7 @@ export class hashMap {
 
     keys() {
         if(!this.bucket) return null;
+
         for(let i = 0; i < this.bucket.length; i++) {
             for(const [key, value] of this.bucket[i]) {
                 console.log(`Key: ${key}`);
@@ -126,6 +132,7 @@ export class hashMap {
 
     values() { 
         if(!this.bucket) return null;
+
         for(let i = 0; i < this.bucket.length; i++) {
             for(const [key, value] of this.bucket[i]) {
                 console.log(`Value: ${value}`);
@@ -135,6 +142,7 @@ export class hashMap {
 
     entries() { 
         if(!this.bucket) return null;
+        
         for(let i = 0; i < this.bucket.length; i++) {
             for(const [key, value] of this.bucket[i]) {
                 console.log(`Key: ${key} | Value: ${value}`)
