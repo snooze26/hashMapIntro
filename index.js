@@ -18,10 +18,8 @@ test.set('Mandy', 'Human girl')
 // test.set('tiger', 'blackkk')
 
 // console.log(test);
-console.log(test);
-test.remove("Grim");
-console.log(test.length());
-console.log(test);
+
+console.log(test.keys())
 
 // console.log(test.length());
 

@@ -39,7 +39,6 @@ export class hashMap {
         let bucket = this.bucket[index]; 
         
         for(let i = 0; i < bucket.length; i++){
-                console.log(bucket[i[0]])
                 if(bucket[i][0] === key) { 
                     bucket[i][1] = value;
                     return;
@@ -115,5 +114,19 @@ export class hashMap {
         }
         return this.bucket;
     }
+
+    keys() {
+        if(!this.bucket) return null;
+        for(let i = 0; i < this.bucket.length; i++) {
+            for(const [key, value] of this.bucket[i]) {
+                console.log(`Key: ${key}`);
+            }
+        }
+    }
 }
+
+
+
+
+
 

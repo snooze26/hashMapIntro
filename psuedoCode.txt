@@ -105,19 +105,19 @@ clear(){
 
 keys() { 
 	Check if the list is empty IF it is then return null 
-	Create an empty array called keys
-	create a array called bucket and assign it to the HM bucket 			while bucket key is true 
-		add the key to the keys array 
-	return keys array 
+	iterate through the bucket list for when i is less than or equal to list size
+		inside a for loop create two new variables in an array called key , value 
+		set the for loop condition to for key and value of this bucket's index 
+			log the key   
 }
 
 
 values() { 
 	Check if the list is empty IF it is then return null 
-	Create an empty array called values
-	create a array called bucket and assign it to the HM bucket 			while bucket value is true 
-		add the value to the values array 
-	return values array 
+	iterate through the bucket list for when i is less than or equal to list size
+		inside a for loop create two new variables in an array called key , value 
+		set the for loop condition to for key and value of this bucket's index 
+			log the value 
 
 
 entries() { 
