@@ -8,6 +8,7 @@ test.set('parrot', 'yellow')
 test.set('turtle', 'orange')
 test.set('pirate', 'brown')
 test.set('dog', 'gray')
+console.log(test.get("parrot"))
 // test.set('frog', 'green')
 // test.set('grape', 'purple')
 // test.set('hat', 'black')
@@ -17,7 +18,7 @@ test.set('dog', 'gray')
 // test.set('lion', 'golden')
 // test.set('tiger', 'blackkk')
 
-console.log(test.get("tiger"))
+// console.log(test.get("parrot"))
 // test.resize();
 // console.log("map after the resize " , test);
 

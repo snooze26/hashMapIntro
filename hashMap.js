@@ -56,22 +56,18 @@ export class hashMap {
     }
 
     get(key) { 
-        if(!this.bucket) return null;
-        let  index = this.getHashCode(key);
-
-        for(let i = 0; i < this.bucket.length; i++) { 
-            for(const [key, value] of this.bucket[i]) {
-                const newIndex = this.getHashCode(key); 
-                console.log("OLD" , index);
-                console.log("NEW" , newIndex);
-               if(index newIndex){
-                    return false
-               }
-        }
+        if(!this.bucket) return null; 
+        let index = this.getHashCode(key); 
+        let bucket = this.bucket[index];
+        
+        for(let i = 0; i < bucket.length; i++){
+            const newIndex = this.getHashCode(bucket[i][0]);
+            if(bucket[i][0] === key) { 
+                return bucket[i][1];
+             }
+       }
+       return null; 
     }
         
-    }
-
 }
-
 
