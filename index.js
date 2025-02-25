@@ -4,11 +4,11 @@ import { hashMap } from "./hashMap.js";
 
 const test = new hashMap();
 
-test.set('parrot', 'yellow')
-test.set('turtle', 'orange')
-test.set('pirate', 'brown')
-test.set('dog', 'gray')
-console.log(test.get("parrot"))
+test.set('Mandy', 'Human girl')
+test.set('Grim', 'Undead male')
+test.set('Billy', 'Human boy')
+test.set('Irwin', 'Human boy')
+console.log(test.has("Grim"))
 // test.set('frog', 'green')
 // test.set('grape', 'purple')
 // test.set('hat', 'black')

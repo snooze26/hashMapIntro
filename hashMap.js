@@ -60,7 +60,7 @@ export class hashMap {
         let index = this.getHashCode(key); 
         let bucket = this.bucket[index];
         
-        for(let i = 0; i < bucket.length; i++){
+        for(let i = 0; i < bucket.length; i++) {
             const newIndex = this.getHashCode(bucket[i][0]);
             if(bucket[i][0] === key) { 
                 return bucket[i][1];
@@ -68,6 +68,19 @@ export class hashMap {
        }
        return null; 
     }
+
+    has(key) {
+        if(!this.bucket) return null;
+        let index = this.getHashCode(key);
+        let bucket = this.bucket[index]; 
         
+        for(let i = 0; i < bucket.length; i++) { 
+            const newIndex = this.getHashCode(bucket[i][0]);
+            if(bucket[i][0] == key){
+                return true;
+            }
+        }
+        return false; 
+    }
 }
 
